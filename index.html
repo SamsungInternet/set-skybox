@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			html, body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+			}
+			body {
+				display: flex;
+				flex-direction: column;
+			}
+			img {
+				min-width: 0;
+				min-height: 0;
+				object-fit: cover;
+				flex: 1 1;
+				margin: 0 1em 1em 1em;
+			}
+			img:first-child {
+				margin-top: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<img src="google-earth.jpg" />
+		<img src="gear360.jpg" />
+		<img src="metaverse.png" />
+
+		<script>
+
+			// When an image is clicked on set it's src to be that of the image
+			[].forEach.call(document.querySelectorAll('img'), function (el) {
+				el.addEventListener('click', setSkybox);
+			});
+			function setSkybox() {
+				if (window.SamsungChangeSky) {
+					window.SamsungChangeSky({ sphere: this.src });
+				}
+			}
+		</script>
+	</body>
+</html>
